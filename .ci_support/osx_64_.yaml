@@ -1,11 +1,17 @@
+MACOSX_DEPLOYMENT_TARGET:
+- '10.9'
 c_compiler:
-- vs2017
+- clang
+c_compiler_version:
+- '10'
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
 libxml2:
 - '2.9'
+macos_machine:
+- x86_64-apple-darwin13.4.0
 pin_run_as_build:
   libxml2:
     max_pin: x.x
@@ -15,5 +21,7 @@ pin_run_as_build:
     max_pin: x.x
 sqlite:
 - '3'
+target_platform:
+- osx-64
 zlib:
 - '1.2'
