@@ -9,11 +9,6 @@ package:
 source:
   url: https://download.gnome.org/sources/{{ name }}/{{ version_majmin }}/{{ name }}-{{ version }}.tar.xz
   sha256: 170c3f8446b0f65f8e4b93603349172b1085fb8917c181d10962f02bb85f5387
-  patches:
-    # https://gitlab.gnome.org/GNOME/libsoup/-/merge_requests/132
-    - sqlite-search.patch  # [win]
-    # https://gitlab.gnome.org/GNOME/libsoup/-/merge_requests/133
-    - brotli-windows.patch  # [win]
 
 build:
   number: 0

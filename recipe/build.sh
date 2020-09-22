@@ -18,6 +18,7 @@ meson setup builddir \
 	-Dtests=false \
 	-Dvapi=disabled \
 	-Dgssapi=disabled \
-	-Dkrb5_config=disabled
+	-Dkrb5_config=disabled \
+	-Dsysprof=disabled
 ninja -v -C builddir -j ${CPU_COUNT}
 ninja -C builddir install -j ${CPU_COUNT}
