@@ -15,5 +15,7 @@ pin_run_as_build:
     max_pin: x.x
 sqlite:
 - '3'
+target_platform:
+- win-64
 zlib:
 - '1.2'
