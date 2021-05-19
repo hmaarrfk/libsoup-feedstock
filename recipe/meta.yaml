@@ -11,7 +11,7 @@ source:
   sha256: 170c3f8446b0f65f8e4b93603349172b1085fb8917c181d10962f02bb85f5387
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
@@ -42,6 +42,7 @@ test:
   requires:
     - {{ compiler('c') }}
     - pkg-config
+    - pygobject
   commands:
     - test -f ${PREFIX}/include/libsoup-2.4/libsoup/soup.h                   # [unix]
     - test -f ${PREFIX}/lib/libsoup-2.4.dylib                                # [osx]
