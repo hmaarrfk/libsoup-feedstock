@@ -17,9 +17,9 @@ ninja -C builddir install -j %CPU_COUNT%
 if errorlevel 1 exit 1
 
 :: The gir files produced by the build are currently broken, don't know why...
-:: copy %RECIPE_DIR%\gir\*typelib %LIBRARY_LIB%\girepository-1.0\
+copy %RECIPE_DIR%\gir\*typelib %LIBRARY_LIB%\girepository-1.0\
 if errorlevel 1 exit 1
-:: copy %RECIPE_DIR%\gir\*gir %LIBRARY_PREFIX%\share\gir-1.0\
+copy %RECIPE_DIR%\gir\*gir %LIBRARY_PREFIX%\share\gir-1.0\
 if errorlevel 1 exit 1
 
 del %LIBRARY_PREFIX%\bin\*.pdb
