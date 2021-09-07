@@ -6,6 +6,11 @@ from pathlib import PurePath
 gi.require_version("Soup", "2.4")
 from gi.repository import GObject, Soup, Gio, GLib
 
+# version check
+assert Soup.get_major_version() == Soup.MAJOR_VERSION
+assert Soup.get_minor_version() == Soup.MINOR_VERSION
+assert Soup.get_micro_version() == Soup.MICRO_VERSION
+
 msg = Soup.Message.new("GET", "https://conda-forge.org")
 session = Soup.Session.new()
 

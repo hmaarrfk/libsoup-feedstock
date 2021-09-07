@@ -10351,7 +10351,7 @@ against at application run time.</doc>
       <type name="gint" c:type="gint"/>
     </constant>
     <constant name="MINOR_VERSION"
-              value="72"
+              value="74"
               c:type="SOUP_MINOR_VERSION"
               version="2.42">
       <doc xml:space="preserve"
@@ -13070,7 +13070,7 @@ soup_message_headers_get_list() instead.</doc-deprecated>
               version="2.26">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-message-headers.c"
-             line="1399">Looks up the "Content-Disposition" header in @hdrs, parses it, and
+             line="1410">Looks up the "Content-Disposition" header in @hdrs, parses it, and
 returns its value in *@disposition and *@params. @params can be
 %NULL if you are only interested in the disposition-type.
 
@@ -13091,7 +13091,7 @@ form methods.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-message-headers.c"
-               line="1424">%TRUE if @hdrs contains a "Content-Disposition"
+               line="1435">%TRUE if @hdrs contains a "Content-Disposition"
 header, %FALSE if not (in which case *@disposition and *@params
 will be unchanged).</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -13100,7 +13100,7 @@ will be unchanged).</doc>
           <instance-parameter name="hdrs" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-message-headers.c"
-                 line="1401">a #SoupMessageHeaders</doc>
+                 line="1412">a #SoupMessageHeaders</doc>
             <type name="MessageHeaders" c:type="SoupMessageHeaders*"/>
           </instance-parameter>
           <parameter name="disposition"
@@ -13109,7 +13109,7 @@ will be unchanged).</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-message-headers.c"
-                 line="1402">return location for the
+                 line="1413">return location for the
 disposition-type, or %NULL</doc>
             <type name="utf8" c:type="char**"/>
           </parameter>
@@ -13119,7 +13119,7 @@ disposition-type, or %NULL</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-message-headers.c"
-                 line="1404">return
+                 line="1415">return
 location for the Content-Disposition parameters, or %NULL</doc>
             <type name="GLib.HashTable" c:type="GHashTable**">
               <type name="utf8"/>
@@ -13213,7 +13213,7 @@ resource, or %NULL if you don't care.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-message-headers.c"
-             line="1349">Looks up the "Content-Type" header in @hdrs, parses it, and returns
+             line="1360">Looks up the "Content-Type" header in @hdrs, parses it, and returns
 its value in *@content_type and *@params. @params can be %NULL if you
 are only interested in the content type itself.</doc>
         <source-position filename="..\libsoup\soup-message-headers.h"
@@ -13221,7 +13221,7 @@ are only interested in the content type itself.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-message-headers.c"
-               line="1360">a string with the value of the
+               line="1371">a string with the value of the
 "Content-Type" header or %NULL if @hdrs does not contain that
 header or it cannot be parsed (in which case *@params will be
 unchanged).</doc>
@@ -13231,7 +13231,7 @@ unchanged).</doc>
           <instance-parameter name="hdrs" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-message-headers.c"
-                 line="1351">a #SoupMessageHeaders</doc>
+                 line="1362">a #SoupMessageHeaders</doc>
             <type name="MessageHeaders" c:type="SoupMessageHeaders*"/>
           </instance-parameter>
           <parameter name="params"
@@ -13242,7 +13242,7 @@ unchanged).</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-message-headers.c"
-                 line="1352">
+                 line="1363">
   return location for the Content-Type parameters (eg, "charset"), or
   %NULL</doc>
             <type name="GLib.HashTable" c:type="GHashTable**">
@@ -13622,7 +13622,7 @@ syntactically correct.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-message-headers.c"
-             line="1454">Sets the "Content-Disposition" header in @hdrs to @disposition,
+             line="1465">Sets the "Content-Disposition" header in @hdrs to @disposition,
 optionally with additional parameters specified in @params.
 
 See soup_message_headers_get_content_disposition() for a discussion
@@ -13636,13 +13636,13 @@ of how Content-Disposition is used in HTTP.</doc>
           <instance-parameter name="hdrs" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-message-headers.c"
-                 line="1456">a #SoupMessageHeaders</doc>
+                 line="1467">a #SoupMessageHeaders</doc>
             <type name="MessageHeaders" c:type="SoupMessageHeaders*"/>
           </instance-parameter>
           <parameter name="disposition" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-message-headers.c"
-                 line="1457">the disposition-type</doc>
+                 line="1468">the disposition-type</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="params"
@@ -13651,7 +13651,7 @@ of how Content-Disposition is used in HTTP.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-message-headers.c"
-                 line="1458">additional
+                 line="1469">additional
 parameters, or %NULL</doc>
             <type name="GLib.HashTable" c:type="GHashTable*">
               <type name="utf8"/>
@@ -13746,7 +13746,7 @@ soup_message_headers_get_ranges() for more details.
               version="2.26">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-message-headers.c"
-             line="1379">Sets the "Content-Type" header in @hdrs to @content_type,
+             line="1390">Sets the "Content-Type" header in @hdrs to @content_type,
 optionally with additional parameters specified in @params.</doc>
         <source-position filename="..\libsoup\soup-message-headers.h"
                          line="166"/>
@@ -13757,13 +13757,13 @@ optionally with additional parameters specified in @params.</doc>
           <instance-parameter name="hdrs" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-message-headers.c"
-                 line="1381">a #SoupMessageHeaders</doc>
+                 line="1392">a #SoupMessageHeaders</doc>
             <type name="MessageHeaders" c:type="SoupMessageHeaders*"/>
           </instance-parameter>
           <parameter name="content_type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-message-headers.c"
-                 line="1382">the MIME type</doc>
+                 line="1393">the MIME type</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="params"
@@ -13772,7 +13772,7 @@ optionally with additional parameters specified in @params.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-message-headers.c"
-                 line="1383">additional
+                 line="1394">additional
 parameters, or %NULL</doc>
             <type name="GLib.HashTable" c:type="GHashTable*">
               <type name="utf8"/>
@@ -16636,14 +16636,14 @@ a #SoupSessionSync.</doc>
                  glib:error-domain="soup_request_error_quark">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="4728">A #SoupRequest error.</doc>
+           line="4730">A #SoupRequest error.</doc>
       <member name="bad_uri"
               value="0"
               c:identifier="SOUP_REQUEST_ERROR_BAD_URI"
               glib:nick="bad-uri">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="4730">the URI could not be parsed</doc>
+             line="4732">the URI could not be parsed</doc>
       </member>
       <member name="unsupported_uri_scheme"
               value="1"
@@ -16651,7 +16651,7 @@ a #SoupSessionSync.</doc>
               glib:nick="unsupported-uri-scheme">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="4731">the URI scheme is not
+             line="4733">the URI scheme is not
   supported by this #SoupSession</doc>
       </member>
       <member name="parsing"
@@ -16660,7 +16660,7 @@ a #SoupSessionSync.</doc>
               glib:nick="parsing">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="4733">the server's response could not
+             line="4735">the server's response could not
   be parsed</doc>
       </member>
       <member name="encoding"
@@ -16669,7 +16669,7 @@ a #SoupSessionSync.</doc>
               glib:nick="encoding">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="4735">the server's response was in an
+             line="4737">the server's response was in an
   unsupported format</doc>
       </member>
       <function name="quark" c:identifier="soup_request_error_quark">
@@ -17048,7 +17048,7 @@ soup_server_set_ssl_certificate().</doc-deprecated>
               version="2.30">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3654">Alias for the #SoupSession:accept-language property, qv.</doc>
+           line="3656">Alias for the #SoupSession:accept-language property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="80"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -17058,7 +17058,7 @@ soup_server_set_ssl_certificate().</doc-deprecated>
               version="2.30">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3682">Alias for the #SoupSession:accept-language-auto property, qv.</doc>
+           line="3684">Alias for the #SoupSession:accept-language-auto property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="81"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -17069,7 +17069,7 @@ soup_server_set_ssl_certificate().</doc-deprecated>
               introspectable="0">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3706">Alias for the #SoupSession:add-feature property, qv.</doc>
+           line="3708">Alias for the #SoupSession:add-feature property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="83"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -17080,7 +17080,7 @@ soup_server_set_ssl_certificate().</doc-deprecated>
               introspectable="0">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3729">Alias for the #SoupSession:add-feature-by-type property, qv.</doc>
+           line="3731">Alias for the #SoupSession:add-feature-by-type property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="84"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -17107,7 +17107,7 @@ soup_server_set_ssl_certificate().</doc-deprecated>
               c:type="SOUP_SESSION_ASYNC_CONTEXT">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3528">Alias for the #SoupSession:async-context property, qv.</doc>
+           line="3530">Alias for the #SoupSession:async-context property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="76"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -17171,7 +17171,7 @@ soup_server_set_ssl_certificate().</doc-deprecated>
               version="2.38">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3816">Alias for the #SoupSession:https-aliases property, qv.</doc>
+           line="3818">Alias for the #SoupSession:https-aliases property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="87"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -17181,7 +17181,7 @@ soup_server_set_ssl_certificate().</doc-deprecated>
               version="2.38">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3789">Alias for the #SoupSession:http-aliases property, qv.</doc>
+           line="3791">Alias for the #SoupSession:http-aliases property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="86"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -17191,7 +17191,7 @@ soup_server_set_ssl_certificate().</doc-deprecated>
               version="2.24">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3330">Alias for the #SoupSession:idle-timeout property, qv.</doc>
+           line="3332">Alias for the #SoupSession:idle-timeout property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="82"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -17201,7 +17201,7 @@ soup_server_set_ssl_certificate().</doc-deprecated>
               version="2.42">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3832">Alias for the #SoupSession:local-address property, qv.</doc>
+           line="3834">Alias for the #SoupSession:local-address property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="65"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -17210,7 +17210,7 @@ soup_server_set_ssl_certificate().</doc-deprecated>
               c:type="SOUP_SESSION_MAX_CONNS">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3281">Alias for the #SoupSession:max-conns property, qv.</doc>
+           line="3283">Alias for the #SoupSession:max-conns property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="68"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -17219,7 +17219,7 @@ soup_server_set_ssl_certificate().</doc-deprecated>
               c:type="SOUP_SESSION_MAX_CONNS_PER_HOST">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3296">Alias for the #SoupSession:max-conns-per-host property, qv.</doc>
+           line="3298">Alias for the #SoupSession:max-conns-per-host property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="69"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -17228,7 +17228,7 @@ soup_server_set_ssl_certificate().</doc-deprecated>
               c:type="SOUP_SESSION_PROXY_RESOLVER">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3268">Alias for the #SoupSession:proxy-resolver property, qv.</doc>
+           line="3270">Alias for the #SoupSession:proxy-resolver property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="67"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -17237,7 +17237,7 @@ soup_server_set_ssl_certificate().</doc-deprecated>
               c:type="SOUP_SESSION_PROXY_URI">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3238">Alias for the #SoupSession:proxy-uri property, qv.</doc>
+           line="3240">Alias for the #SoupSession:proxy-uri property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="66"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -17248,7 +17248,7 @@ soup_server_set_ssl_certificate().</doc-deprecated>
               introspectable="0">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3752">Alias for the #SoupSession:remove-feature-by-type property,
+           line="3754">Alias for the #SoupSession:remove-feature-by-type property,
 qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="85"/>
       <type name="utf8" c:type="gchar*"/>
@@ -17258,7 +17258,7 @@ qv.</doc>
               c:type="SOUP_SESSION_SSL_CA_FILE">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3380">Alias for the #SoupSession:ssl-ca-file property, qv.</doc>
+           line="3382">Alias for the #SoupSession:ssl-ca-file property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="71"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -17268,7 +17268,7 @@ qv.</doc>
               version="2.30">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3468">Alias for the #SoupSession:ssl-strict property, qv.</doc>
+           line="3470">Alias for the #SoupSession:ssl-strict property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="74"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -17278,7 +17278,7 @@ qv.</doc>
               version="2.38">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3393">Alias for the #SoupSession:ssl-use-system-ca-file property,
+           line="3395">Alias for the #SoupSession:ssl-use-system-ca-file property,
 qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="72"/>
       <type name="utf8" c:type="gchar*"/>
@@ -17315,7 +17315,7 @@ qv.</doc>
               c:type="SOUP_SESSION_TIMEOUT">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3588">Alias for the #SoupSession:timeout property, qv.</doc>
+           line="3590">Alias for the #SoupSession:timeout property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="78"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -17325,7 +17325,7 @@ qv.</doc>
               version="2.38">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3431">Alias for the #SoupSession:tls-database property, qv.</doc>
+           line="3432">Alias for the #SoupSession:tls-database property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="73"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -17335,7 +17335,7 @@ qv.</doc>
               version="2.48">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3859">Alias for the #SoupSession:tls-interaction property, qv.</doc>
+           line="3861">Alias for the #SoupSession:tls-interaction property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="75"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -17344,7 +17344,7 @@ qv.</doc>
               c:type="SOUP_SESSION_USER_AGENT">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3629">Alias for the #SoupSession:user-agent property, qv.</doc>
+           line="3631">Alias for the #SoupSession:user-agent property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="79"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -17353,7 +17353,7 @@ qv.</doc>
               c:type="SOUP_SESSION_USE_NTLM">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3353">Alias for the #SoupSession:use-ntlm property, qv.</doc>
+           line="3355">Alias for the #SoupSession:use-ntlm property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="70"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -17363,7 +17363,7 @@ qv.</doc>
               version="2.38">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="3540">Alias for the #SoupSession:use-thread-context property, qv.</doc>
+           line="3542">Alias for the #SoupSession:use-thread-context property, qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="77"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -19434,12 +19434,12 @@ rules as #SoupServerCallback (qv).</doc>
       <constructor name="new" c:identifier="soup_session_new" version="2.42">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="877">Creates a #SoupSession with the default options.</doc>
+             line="879">Creates a #SoupSession with the default options.</doc>
         <source-position filename="..\libsoup\soup-session.h" line="90"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="882">the new session.</doc>
+               line="884">the new session.</doc>
           <type name="Session" c:type="SoupSession*"/>
         </return-value>
       </constructor>
@@ -19449,25 +19449,25 @@ rules as #SoupServerCallback (qv).</doc>
                    introspectable="0">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="892">Creates a #SoupSession with the specified options.</doc>
+             line="894">Creates a #SoupSession with the specified options.</doc>
         <source-position filename="..\libsoup\soup-session.h" line="93"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="899">the new session.</doc>
+               line="901">the new session.</doc>
           <type name="Session" c:type="SoupSession*"/>
         </return-value>
         <parameters>
           <parameter name="optname1" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="894">name of first property to set</doc>
+                 line="896">name of first property to set</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="895">value of @optname1, followed by additional property/value pairs</doc>
+                 line="897">value of @optname1, followed by additional property/value pairs</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -19515,7 +19515,7 @@ rules as #SoupServerCallback (qv).</doc>
       <virtual-method name="cancel_message" invoker="cancel_message">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2421">Causes @session to immediately finish processing @msg (regardless
+             line="2423">Causes @session to immediately finish processing @msg (regardless
 of its current state) with a final status_code of @status_code. You
 may call this at any time after handing @msg off to @session; if
 @session has started sending the request but has not yet received
@@ -19545,19 +19545,19 @@ returning to the main loop.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2423">a #SoupSession</doc>
+                 line="2425">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2424">the message to cancel</doc>
+                 line="2426">the message to cancel</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
           <parameter name="status_code" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2425">status code to set on @msg (generally
+                 line="2427">status code to set on @msg (generally
 %SOUP_STATUS_CANCELLED)</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
@@ -19588,7 +19588,7 @@ returning to the main loop.</doc>
       <virtual-method name="queue_message" invoker="queue_message">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2148">Queues the message @msg for asynchronously sending the request and
+             line="2150">Queues the message @msg for asynchronously sending the request and
 receiving a response in the current thread-default #GMainContext.
 If @msg has been processed before, any resources related to the
 time it was last sent are freed.
@@ -19616,13 +19616,13 @@ response body, and allows you to read the response via a
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2150">a #SoupSession</doc>
+                 line="2152">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2151">the message to queue</doc>
+                 line="2153">the message to queue</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
           <parameter name="callback"
@@ -19633,7 +19633,7 @@ response body, and allows you to read the response via a
                      closure="2">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2152">a #SoupSessionCallback which will
+                 line="2154">a #SoupSessionCallback which will
 be called after the message completes or when an unrecoverable error occurs.</doc>
             <type name="SessionCallback" c:type="SoupSessionCallback"/>
           </parameter>
@@ -19644,7 +19644,7 @@ be called after the message completes or when an unrecoverable error occurs.</do
                      closure="2">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2154">a pointer passed to @callback.</doc>
+                 line="2156">a pointer passed to @callback.</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -19669,7 +19669,7 @@ be called after the message completes or when an unrecoverable error occurs.</do
       <virtual-method name="requeue_message" invoker="requeue_message">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2214">This causes @msg to be placed back on the queue to be attempted
+             line="2216">This causes @msg to be placed back on the queue to be attempted
 again.</doc>
         <source-position filename="..\libsoup\soup-session.h" line="45"/>
         <return-value transfer-ownership="none">
@@ -19679,13 +19679,13 @@ again.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2216">a #SoupSession</doc>
+                 line="2218">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2217">the message to requeue</doc>
+                 line="2219">the message to requeue</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
         </parameters>
@@ -19693,7 +19693,7 @@ again.</doc>
       <virtual-method name="send_message" invoker="send_message">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2245">Synchronously send @msg. This call will not return until the
+             line="2247">Synchronously send @msg. This call will not return until the
 transfer is finished successfully or there is an unrecoverable
 error.
 
@@ -19713,20 +19713,20 @@ response body, and allows you to read the response via a
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="2267">the HTTP status code of the response</doc>
+               line="2269">the HTTP status code of the response</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2247">a #SoupSession</doc>
+                 line="2249">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2248">the message to send</doc>
+                 line="2250">the message to send</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
         </parameters>
@@ -19734,7 +19734,7 @@ response body, and allows you to read the response via a
       <method name="abort" c:identifier="soup_session_abort">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2528">Cancels all pending requests in @session and closes all idle
+             line="2530">Cancels all pending requests in @session and closes all idle
 persistent connections.
 
 The message cancellation has the same semantics as with
@@ -19750,7 +19750,7 @@ not.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2530">the session</doc>
+                 line="2532">the session</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
         </parameters>
@@ -19760,7 +19760,7 @@ not.</doc>
               version="2.24">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2667">Adds @feature's functionality to @session. You can also add a
+             line="2669">Adds @feature's functionality to @session. You can also add a
 feature to the session at construct time by using the
 %SOUP_SESSION_ADD_FEATURE property.
 
@@ -19774,13 +19774,13 @@ features are present in sessions by default.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2669">a #SoupSession</doc>
+                 line="2671">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="feature" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2670">an object that implements #SoupSessionFeature</doc>
+                 line="2672">an object that implements #SoupSessionFeature</doc>
             <type name="SessionFeature" c:type="SoupSessionFeature*"/>
           </parameter>
         </parameters>
@@ -19790,7 +19790,7 @@ features are present in sessions by default.</doc>
               version="2.24">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2704">If @feature_type is the type of a class that implements
+             line="2706">If @feature_type is the type of a class that implements
 #SoupSessionFeature, this creates a new feature of that type and
 adds it to @session as with soup_session_add_feature(). You can use
 this when you don't need to customize the new feature in any way.
@@ -19813,13 +19813,13 @@ features are present in sessions by default.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2706">a #SoupSession</doc>
+                 line="2708">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="feature_type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2707">a #GType</doc>
+                 line="2709">a #GType</doc>
             <type name="GType" c:type="GType"/>
           </parameter>
         </parameters>
@@ -19827,7 +19827,7 @@ features are present in sessions by default.</doc>
       <method name="cancel_message" c:identifier="soup_session_cancel_message">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2421">Causes @session to immediately finish processing @msg (regardless
+             line="2423">Causes @session to immediately finish processing @msg (regardless
 of its current state) with a final status_code of @status_code. You
 may call this at any time after handing @msg off to @session; if
 @session has started sending the request but has not yet received
@@ -19857,19 +19857,19 @@ returning to the main loop.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2423">a #SoupSession</doc>
+                 line="2425">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2424">the message to cancel</doc>
+                 line="2426">the message to cancel</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
           <parameter name="status_code" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2425">status code to set on @msg (generally
+                 line="2427">status code to set on @msg (generally
 %SOUP_STATUS_CANCELLED)</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
@@ -19880,7 +19880,7 @@ returning to the main loop.</doc>
               version="2.62">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="5071">Start a connection to @uri. The operation can be monitored by providing a @progress_callback
+             line="5073">Start a connection to @uri. The operation can be monitored by providing a @progress_callback
 and finishes when the connection is done or an error ocurred.
 
 Call soup_session_connect_finish() to get the #GIOStream to communicate with the server.</doc>
@@ -19892,13 +19892,13 @@ Call soup_session_connect_finish() to get the #GIOStream to communicate with the
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="5073">a #SoupSession</doc>
+                 line="5075">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="5074">a #SoupURI to connect to</doc>
+                 line="5076">a #SoupURI to connect to</doc>
             <type name="URI" c:type="SoupURI*"/>
           </parameter>
           <parameter name="cancellable"
@@ -19907,7 +19907,7 @@ Call soup_session_connect_finish() to get the #GIOStream to communicate with the
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="5075">a #GCancellable</doc>
+                 line="5077">a #GCancellable</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
           <parameter name="progress_callback"
@@ -19917,7 +19917,7 @@ Call soup_session_connect_finish() to get the #GIOStream to communicate with the
                      scope="async">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="5076">a #SoupSessionConnectProgressCallback which
+                 line="5078">a #SoupSessionConnectProgressCallback which
 will be called for every network event that occurs during the connection.</doc>
             <type name="SessionConnectProgressCallback"
                   c:type="SoupSessionConnectProgressCallback"/>
@@ -19930,7 +19930,7 @@ will be called for every network event that occurs during the connection.</doc>
                      closure="4">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="5078">the callback to invoke when the operation finishes</doc>
+                 line="5080">the callback to invoke when the operation finishes</doc>
             <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
           </parameter>
           <parameter name="user_data"
@@ -19939,7 +19939,7 @@ will be called for every network event that occurs during the connection.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="5079">data for @progress_callback and @callback</doc>
+                 line="5081">data for @progress_callback and @callback</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -19950,25 +19950,25 @@ will be called for every network event that occurs during the connection.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="5130">Gets the #GIOStream created for the connection to communicate with the server.</doc>
+             line="5132">Gets the #GIOStream created for the connection to communicate with the server.</doc>
         <source-position filename="..\libsoup\soup-session.h" line="251"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="5138">a new #GIOStream, or %NULL on error.</doc>
+               line="5140">a new #GIOStream, or %NULL on error.</doc>
           <type name="Gio.IOStream" c:type="GIOStream*"/>
         </return-value>
         <parameters>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="5132">a #SoupSession</doc>
+                 line="5134">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="result" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="5133">the #GAsyncResult passed to your callback</doc>
+                 line="5135">the #GAsyncResult passed to your callback</doc>
             <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
           </parameter>
         </parameters>
@@ -19977,7 +19977,7 @@ will be called for every network event that occurs during the connection.</doc>
               c:identifier="soup_session_get_async_context">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="918">Gets @session's #SoupSession:async-context. This does not add a ref
+             line="920">Gets @session's #SoupSession:async-context. This does not add a ref
 to the context, so you will need to ref it yourself if you want it
 to outlive its session.
 
@@ -19987,7 +19987,7 @@ thread-default #GMainContext, and so is not especially useful.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="929">@session's #GMainContext,
+               line="931">@session's #GMainContext,
 which may be %NULL</doc>
           <type name="GLib.MainContext" c:type="GMainContext*"/>
         </return-value>
@@ -19995,7 +19995,7 @@ which may be %NULL</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="920">a #SoupSession</doc>
+                 line="922">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
         </parameters>
@@ -20005,14 +20005,14 @@ which may be %NULL</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2937">Gets the first feature in @session of type @feature_type. For
+             line="2939">Gets the first feature in @session of type @feature_type. For
 features where there may be more than one feature of a given type,
 use soup_session_get_features().</doc>
         <source-position filename="..\libsoup\soup-session.h" line="182"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="2946">a #SoupSessionFeature, or
+               line="2948">a #SoupSessionFeature, or
 %NULL. The feature is owned by @session.</doc>
           <type name="SessionFeature" c:type="SoupSessionFeature*"/>
         </return-value>
@@ -20020,13 +20020,13 @@ use soup_session_get_features().</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2939">a #SoupSession</doc>
+                 line="2941">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="feature_type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2940">the #GType of the feature to get</doc>
+                 line="2942">the #GType of the feature to get</doc>
             <type name="GType" c:type="GType"/>
           </parameter>
         </parameters>
@@ -20036,7 +20036,7 @@ use soup_session_get_features().</doc>
               version="2.28">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2979">Gets the first feature in @session of type @feature_type, provided
+             line="2981">Gets the first feature in @session of type @feature_type, provided
 that it is not disabled for @msg. As with
 soup_session_get_feature(), this should only be used for features
 where @feature_type is only expected to match a single feature. In
@@ -20047,7 +20047,7 @@ disabled on @msg, and the second is not, then this will return
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="2993">a #SoupSessionFeature, or %NULL. The
+               line="2995">a #SoupSessionFeature, or %NULL. The
 feature is owned by @session.</doc>
           <type name="SessionFeature" c:type="SoupSessionFeature*"/>
         </return-value>
@@ -20055,19 +20055,19 @@ feature is owned by @session.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2981">a #SoupSession</doc>
+                 line="2983">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="feature_type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2982">the #GType of the feature to get</doc>
+                 line="2984">the #GType of the feature to get</doc>
             <type name="GType" c:type="GType"/>
           </parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2983">a #SoupMessage</doc>
+                 line="2985">a #SoupMessage</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
         </parameters>
@@ -20077,14 +20077,14 @@ feature is owned by @session.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2907">Generates a list of @session's features of type @feature_type. (If
+             line="2909">Generates a list of @session's features of type @feature_type. (If
 you want to see all features, you can pass %SOUP_TYPE_SESSION_FEATURE
 for @feature_type.)</doc>
         <source-position filename="..\libsoup\soup-session.h" line="179"/>
         <return-value transfer-ownership="container">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="2916">
+               line="2918">
 a list of features. You must free the list, but not its contents</doc>
           <type name="GLib.SList" c:type="GSList*">
             <type name="SessionFeature"/>
@@ -20094,13 +20094,13 @@ a list of features. You must free the list, but not its contents</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2909">a #SoupSession</doc>
+                 line="2911">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="feature_type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2910">the #GType of the class of features to get</doc>
+                 line="2912">the #GType of the class of features to get</doc>
             <type name="GType" c:type="GType"/>
           </parameter>
         </parameters>
@@ -20110,7 +20110,7 @@ a list of features. You must free the list, but not its contents</doc>
               version="2.42">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2851">Tests if @session has at a feature of type @feature_type (which can
+             line="2853">Tests if @session has at a feature of type @feature_type (which can
 be the type of either a #SoupSessionFeature, or else a subtype of
 some class managed by another feature, such as #SoupAuth or
 #SoupRequest).</doc>
@@ -20118,20 +20118,20 @@ some class managed by another feature, such as #SoupAuth or
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="2861">%TRUE or %FALSE</doc>
+               line="2863">%TRUE or %FALSE</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2853">a #SoupSession</doc>
+                 line="2855">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="feature_type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2854">the #GType of the class of features to check for</doc>
+                 line="2856">the #GType of the class of features to check for</doc>
             <type name="GType" c:type="GType"/>
           </parameter>
         </parameters>
@@ -20139,7 +20139,7 @@ some class managed by another feature, such as #SoupAuth or
       <method name="pause_message" c:identifier="soup_session_pause_message">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2279">Pauses HTTP I/O on @msg. Call soup_session_unpause_message() to
+             line="2281">Pauses HTTP I/O on @msg. Call soup_session_unpause_message() to
 resume I/O.
 
 This may only be called for asynchronous messages (those sent on a
@@ -20152,13 +20152,13 @@ This may only be called for asynchronous messages (those sent on a
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2281">a #SoupSession</doc>
+                 line="2283">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2282">a #SoupMessage currently running on @session</doc>
+                 line="2284">a #SoupMessage currently running on @session</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
         </parameters>
@@ -20168,7 +20168,7 @@ This may only be called for asynchronous messages (those sent on a
               version="2.38">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2627">Tells @session that an URI from the given @hostname may be requested
+             line="2629">Tells @session that an URI from the given @hostname may be requested
 shortly, and so the session can try to prepare by resolving the
 domain name in advance, in order to work more quickly once the URI
 is actually requested.
@@ -20184,13 +20184,13 @@ status of %SOUP_STATUS_CANCELLED.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2629">a #SoupSession</doc>
+                 line="2631">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="hostname" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2630">a hostname to be resolved</doc>
+                 line="2632">a hostname to be resolved</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="cancellable"
@@ -20199,7 +20199,7 @@ status of %SOUP_STATUS_CANCELLED.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2631">a #GCancellable object, or %NULL</doc>
+                 line="2633">a #GCancellable object, or %NULL</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
           <parameter name="callback"
@@ -20210,7 +20210,7 @@ status of %SOUP_STATUS_CANCELLED.</doc>
                      closure="3">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2632">callback to call with the
+                 line="2634">callback to call with the
     result, or %NULL</doc>
             <type name="AddressCallback" c:type="SoupAddressCallback"/>
           </parameter>
@@ -20220,7 +20220,7 @@ status of %SOUP_STATUS_CANCELLED.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2634">data for @callback</doc>
+                 line="2636">data for @callback</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -20232,7 +20232,7 @@ status of %SOUP_STATUS_CANCELLED.</doc>
               deprecated-version="2.38">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2601">Tells @session that @uri may be requested shortly, and so the
+             line="2603">Tells @session that @uri may be requested shortly, and so the
 session can try to prepare (resolving the domain name, obtaining
 proxy address, etc.) in order to work more quickly once the URI is
 actually requested.</doc>
@@ -20245,13 +20245,13 @@ actually requested.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2603">a #SoupSession</doc>
+                 line="2605">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2604">a #SoupURI which may be required</doc>
+                 line="2606">a #SoupURI which may be required</doc>
             <type name="URI" c:type="SoupURI*"/>
           </parameter>
         </parameters>
@@ -20259,7 +20259,7 @@ actually requested.</doc>
       <method name="queue_message" c:identifier="soup_session_queue_message">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2148">Queues the message @msg for asynchronously sending the request and
+             line="2150">Queues the message @msg for asynchronously sending the request and
 receiving a response in the current thread-default #GMainContext.
 If @msg has been processed before, any resources related to the
 time it was last sent are freed.
@@ -20287,13 +20287,13 @@ response body, and allows you to read the response via a
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2150">a #SoupSession</doc>
+                 line="2152">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2151">the message to queue</doc>
+                 line="2153">the message to queue</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
           <parameter name="callback"
@@ -20304,7 +20304,7 @@ response body, and allows you to read the response via a
                      closure="2">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2152">a #SoupSessionCallback which will
+                 line="2154">a #SoupSessionCallback which will
 be called after the message completes or when an unrecoverable error occurs.</doc>
             <type name="SessionCallback" c:type="SoupSessionCallback"/>
           </parameter>
@@ -20314,7 +20314,7 @@ be called after the message completes or when an unrecoverable error occurs.</do
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2154">a pointer passed to @callback.</doc>
+                 line="2156">a pointer passed to @callback.</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -20324,7 +20324,7 @@ be called after the message completes or when an unrecoverable error occurs.</do
               version="2.38">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="1145">Updates @msg's URI according to its status code and "Location"
+             line="1147">Updates @msg's URI according to its status code and "Location"
 header, and requeues it on @session. Use this when you have set
 %SOUP_MESSAGE_NO_REDIRECT on a message, but have decided to allow a
 particular redirection to occur, or if you want to allow a
@@ -20340,7 +20340,7 @@ cause it to fail with %SOUP_STATUS_TOO_MANY_REDIRECTS.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="1163">%TRUE if a redirection was applied, %FALSE if not
+               line="1165">%TRUE if a redirection was applied, %FALSE if not
 (eg, because there was no Location header, or it could not be
 parsed).</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -20349,13 +20349,13 @@ parsed).</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="1147">the session</doc>
+                 line="1149">the session</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="1148">a #SoupMessage that has received a 3xx response</doc>
+                 line="1150">a #SoupMessage that has received a 3xx response</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
         </parameters>
@@ -20365,7 +20365,7 @@ parsed).</doc>
               version="2.24">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2763">Removes @feature's functionality from @session.</doc>
+             line="2765">Removes @feature's functionality from @session.</doc>
         <source-position filename="..\libsoup\soup-session.h" line="170"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -20374,13 +20374,13 @@ parsed).</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2765">a #SoupSession</doc>
+                 line="2767">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="feature" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2766">a feature that has previously been added to @session</doc>
+                 line="2768">a feature that has previously been added to @session</doc>
             <type name="SessionFeature" c:type="SoupSessionFeature*"/>
           </parameter>
         </parameters>
@@ -20390,7 +20390,7 @@ parsed).</doc>
               version="2.24">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2797">Removes all features of type @feature_type (or any subclass of
+             line="2799">Removes all features of type @feature_type (or any subclass of
 @feature_type) from @session. You can also remove standard features
 from the session at construct time by using the
 %SOUP_SESSION_REMOVE_FEATURE_BY_TYPE property.</doc>
@@ -20402,13 +20402,13 @@ from the session at construct time by using the
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2799">a #SoupSession</doc>
+                 line="2801">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="feature_type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2800">a #GType</doc>
+                 line="2802">a #GType</doc>
             <type name="GType" c:type="GType"/>
           </parameter>
         </parameters>
@@ -20419,12 +20419,12 @@ from the session at construct time by using the
               throws="1">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="4561">Creates a #SoupRequest for retrieving @uri_string.</doc>
+             line="4563">Creates a #SoupRequest for retrieving @uri_string.</doc>
         <source-position filename="..\libsoup\soup-session.h" line="190"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="4569">a new #SoupRequest, or
+               line="4571">a new #SoupRequest, or
   %NULL on error.</doc>
           <type name="Request" c:type="SoupRequest*"/>
         </return-value>
@@ -20432,13 +20432,13 @@ from the session at construct time by using the
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4563">a #SoupSession</doc>
+                 line="4565">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="uri_string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4564">a URI, in string form</doc>
+                 line="4566">a URI, in string form</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -20449,14 +20449,14 @@ from the session at construct time by using the
               throws="1">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="4658">Creates a #SoupRequest for retrieving @uri_string, which must be an
+             line="4660">Creates a #SoupRequest for retrieving @uri_string, which must be an
 "http" or "https" URI (or another protocol listed in @session's
 #SoupSession:http-aliases or #SoupSession:https-aliases).</doc>
         <source-position filename="..\libsoup\soup-session.h" line="198"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="4669">a new #SoupRequestHTTP, or
+               line="4671">a new #SoupRequestHTTP, or
   %NULL on error.</doc>
           <type name="RequestHTTP" c:type="SoupRequestHTTP*"/>
         </return-value>
@@ -20464,19 +20464,19 @@ from the session at construct time by using the
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4660">a #SoupSession</doc>
+                 line="4662">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="method" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4661">an HTTP method</doc>
+                 line="4663">an HTTP method</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="uri_string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4662">a URI, in string form</doc>
+                 line="4664">a URI, in string form</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -20487,14 +20487,14 @@ from the session at construct time by using the
               throws="1">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="4689">Creates a #SoupRequest for retrieving @uri, which must be an
+             line="4691">Creates a #SoupRequest for retrieving @uri, which must be an
 "http" or "https" URI (or another protocol listed in @session's
 #SoupSession:http-aliases or #SoupSession:https-aliases).</doc>
         <source-position filename="..\libsoup\soup-session.h" line="203"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="4700">a new #SoupRequestHTTP, or
+               line="4702">a new #SoupRequestHTTP, or
   %NULL on error.</doc>
           <type name="RequestHTTP" c:type="SoupRequestHTTP*"/>
         </return-value>
@@ -20502,19 +20502,19 @@ from the session at construct time by using the
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4691">a #SoupSession</doc>
+                 line="4693">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="method" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4692">an HTTP method</doc>
+                 line="4694">an HTTP method</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4693">a #SoupURI representing the URI to retrieve</doc>
+                 line="4695">a #SoupURI representing the URI to retrieve</doc>
             <type name="URI" c:type="SoupURI*"/>
           </parameter>
         </parameters>
@@ -20525,12 +20525,12 @@ from the session at construct time by using the
               throws="1">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="4594">Creates a #SoupRequest for retrieving @uri.</doc>
+             line="4596">Creates a #SoupRequest for retrieving @uri.</doc>
         <source-position filename="..\libsoup\soup-session.h" line="194"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="4602">a new #SoupRequest, or
+               line="4604">a new #SoupRequest, or
   %NULL on error.</doc>
           <type name="Request" c:type="SoupRequest*"/>
         </return-value>
@@ -20538,13 +20538,13 @@ from the session at construct time by using the
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4596">a #SoupSession</doc>
+                 line="4598">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4597">a #SoupURI representing the URI to retrieve</doc>
+                 line="4599">a #SoupURI representing the URI to retrieve</doc>
             <type name="URI" c:type="SoupURI*"/>
           </parameter>
         </parameters>
@@ -20553,7 +20553,7 @@ from the session at construct time by using the
               c:identifier="soup_session_requeue_message">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2214">This causes @msg to be placed back on the queue to be attempted
+             line="2216">This causes @msg to be placed back on the queue to be attempted
 again.</doc>
         <source-position filename="..\libsoup\soup-session.h" line="102"/>
         <return-value transfer-ownership="none">
@@ -20563,13 +20563,13 @@ again.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2216">a #SoupSession</doc>
+                 line="2218">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2217">the message to requeue</doc>
+                 line="2219">the message to requeue</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
         </parameters>
@@ -20580,7 +20580,7 @@ again.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="4414">Synchronously sends @msg and waits for the beginning of a response.
+             line="4416">Synchronously sends @msg and waits for the beginning of a response.
 On success, a #GInputStream will be returned which you can use to
 read the response body. ("Success" here means only that an HTTP
 response was received and understood; it does not necessarily mean
@@ -20609,7 +20609,7 @@ response has been completely read.
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="4447">a #GInputStream for reading the
+               line="4449">a #GInputStream for reading the
   response body, or %NULL on error.</doc>
           <type name="Gio.InputStream" c:type="GInputStream*"/>
         </return-value>
@@ -20617,13 +20617,13 @@ response has been completely read.
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4416">a #SoupSession</doc>
+                 line="4418">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4417">a #SoupMessage</doc>
+                 line="4419">a #SoupMessage</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
           <parameter name="cancellable"
@@ -20632,7 +20632,7 @@ response has been completely read.
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4418">a #GCancellable</doc>
+                 line="4420">a #GCancellable</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
         </parameters>
@@ -20642,7 +20642,7 @@ response has been completely read.
               version="2.42">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="4296">Asynchronously sends @msg and waits for the beginning of a
+             line="4298">Asynchronously sends @msg and waits for the beginning of a
 response. When @callback is called, then either @msg has been sent,
 and its response headers received, or else an error has occurred.
 Call soup_session_send_finish() to get a #GInputStream for reading
@@ -20666,13 +20666,13 @@ callback until the response has been completely read.
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4298">a #SoupSession</doc>
+                 line="4300">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4299">a #SoupMessage</doc>
+                 line="4301">a #SoupMessage</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
           <parameter name="cancellable"
@@ -20681,7 +20681,7 @@ callback until the response has been completely read.
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4300">a #GCancellable</doc>
+                 line="4302">a #GCancellable</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
           <parameter name="callback"
@@ -20692,7 +20692,7 @@ callback until the response has been completely read.
                      closure="3">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4301">the callback to invoke</doc>
+                 line="4303">the callback to invoke</doc>
             <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
           </parameter>
           <parameter name="user_data"
@@ -20701,7 +20701,7 @@ callback until the response has been completely read.
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4302">data for @callback</doc>
+                 line="4304">data for @callback</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -20712,14 +20712,14 @@ callback until the response has been completely read.
               throws="1">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="4372">Gets the response to a soup_session_send_async() call and (if
+             line="4374">Gets the response to a soup_session_send_async() call and (if
 successful), returns a #GInputStream that can be used to read the
 response body.</doc>
         <source-position filename="..\libsoup\soup-session.h" line="133"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="4382">a #GInputStream for reading the
+               line="4384">a #GInputStream for reading the
   response body, or %NULL on error.</doc>
           <type name="Gio.InputStream" c:type="GInputStream*"/>
         </return-value>
@@ -20727,13 +20727,13 @@ response body.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4374">a #SoupSession</doc>
+                 line="4376">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="result" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4375">the #GAsyncResult passed to your callback</doc>
+                 line="4377">the #GAsyncResult passed to your callback</doc>
             <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
           </parameter>
         </parameters>
@@ -20741,7 +20741,7 @@ response body.</doc>
       <method name="send_message" c:identifier="soup_session_send_message">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2245">Synchronously send @msg. This call will not return until the
+             line="2247">Synchronously send @msg. This call will not return until the
 transfer is finished successfully or there is an unrecoverable
 error.
 
@@ -20761,20 +20761,20 @@ response body, and allows you to read the response via a
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="2267">the HTTP status code of the response</doc>
+               line="2269">the HTTP status code of the response</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2247">a #SoupSession</doc>
+                 line="2249">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2248">the message to send</doc>
+                 line="2250">the message to send</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
         </parameters>
@@ -20784,7 +20784,7 @@ response body, and allows you to read the response via a
               version="2.50">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="4788">"Steals" the HTTP connection associated with @msg from @session.
+             line="4790">"Steals" the HTTP connection associated with @msg from @session.
 This happens immediately, regardless of the current state of the
 connection, and @msg's callback will not be called. You can steal
 the connection from a #SoupMessage signal handler if you need to
@@ -20796,7 +20796,7 @@ holding any other reference to it.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="4802">the #GIOStream formerly associated
+               line="4804">the #GIOStream formerly associated
   with @msg (or %NULL if @msg was no longer associated with a
   connection). No guarantees are made about what kind of #GIOStream
   is returned.</doc>
@@ -20806,13 +20806,13 @@ holding any other reference to it.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4790">a #SoupSession</doc>
+                 line="4792">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4791">the message whose connection is to be stolen</doc>
+                 line="4793">the message whose connection is to be stolen</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
         </parameters>
@@ -20821,7 +20821,7 @@ holding any other reference to it.</doc>
               c:identifier="soup_session_unpause_message">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="2359">Resumes HTTP I/O on @msg. Use this to resume after calling
+             line="2361">Resumes HTTP I/O on @msg. Use this to resume after calling
 soup_session_pause_message().
 
 If @msg is being sent via blocking I/O, this will resume reading or
@@ -20838,13 +20838,13 @@ This may only be called for asynchronous messages (those sent on a
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2361">a #SoupSession</doc>
+                 line="2363">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2362">a #SoupMessage currently running on @session</doc>
+                 line="2364">a #SoupMessage currently running on @session</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
         </parameters>
@@ -20854,7 +20854,7 @@ This may only be called for asynchronous messages (those sent on a
               version="2.50">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="4898">Asynchronously creates a #SoupWebsocketConnection to communicate
+             line="4900">Asynchronously creates a #SoupWebsocketConnection to communicate
 with a remote server.
 
 All necessary WebSocket-related headers will be added to @msg, and
@@ -20880,13 +20880,13 @@ soup_session_websocket_connect_finish() will return
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4900">a #SoupSession</doc>
+                 line="4902">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4901">#SoupMessage indicating the WebSocket server to connect to</doc>
+                 line="4903">#SoupMessage indicating the WebSocket server to connect to</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
           <parameter name="origin"
@@ -20895,7 +20895,7 @@ soup_session_websocket_connect_finish() will return
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4902">origin of the connection</doc>
+                 line="4904">origin of the connection</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="protocols"
@@ -20904,7 +20904,7 @@ soup_session_websocket_connect_finish() will return
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4903">a
+                 line="4905">a
   %NULL-terminated array of protocols supported</doc>
             <array c:type="char**">
               <type name="utf8" c:type="char*"/>
@@ -20916,7 +20916,7 @@ soup_session_websocket_connect_finish() will return
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4905">a #GCancellable</doc>
+                 line="4907">a #GCancellable</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
           <parameter name="callback"
@@ -20927,7 +20927,7 @@ soup_session_websocket_connect_finish() will return
                      closure="5">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4906">the callback to invoke</doc>
+                 line="4908">the callback to invoke</doc>
             <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
           </parameter>
           <parameter name="user_data"
@@ -20936,7 +20936,7 @@ soup_session_websocket_connect_finish() will return
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4907">data for @callback</doc>
+                 line="4909">data for @callback</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -20947,7 +20947,7 @@ soup_session_websocket_connect_finish() will return
               throws="1">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="4972">Gets the #SoupWebsocketConnection response to a
+             line="4974">Gets the #SoupWebsocketConnection response to a
 soup_session_websocket_connect_async() call and (if successful),
 returns a #SoupWebsocketConnection that can be used to communicate
 with the server.</doc>
@@ -20955,7 +20955,7 @@ with the server.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="4983">a new #SoupWebsocketConnection, or
+               line="4985">a new #SoupWebsocketConnection, or
   %NULL on error.</doc>
           <type name="WebsocketConnection" c:type="SoupWebsocketConnection*"/>
         </return-value>
@@ -20963,13 +20963,13 @@ with the server.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4974">a #SoupSession</doc>
+                 line="4976">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="result" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="4975">the #GAsyncResult passed to your callback</doc>
+                 line="4977">the #GAsyncResult passed to your callback</doc>
             <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
           </parameter>
         </parameters>
@@ -20979,27 +20979,27 @@ with the server.</doc>
               version="2.38">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="1104">Checks if @msg contains a response that would cause @session to
+             line="1106">Checks if @msg contains a response that would cause @session to
 redirect it to a new URL (ignoring @msg's %SOUP_MESSAGE_NO_REDIRECT
 flag, and the number of times it has already been redirected).</doc>
         <source-position filename="..\libsoup\soup-session.h" line="157"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="1113">whether @msg would be redirected</doc>
+               line="1115">whether @msg would be redirected</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="1106">a #SoupSession</doc>
+                 line="1108">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="1107">a #SoupMessage that has response headers</doc>
+                 line="1109">a #SoupMessage that has response headers</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
         </parameters>
@@ -21010,7 +21010,7 @@ flag, and the number of times it has already been redirected).</doc>
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3643">If non-%NULL, the value to use for the "Accept-Language" header
+             line="3645">If non-%NULL, the value to use for the "Accept-Language" header
 on #SoupMessage&lt;!-- --&gt;s sent from this session.
 
 Setting this will disable
@@ -21023,7 +21023,7 @@ Setting this will disable
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3670">If %TRUE, #SoupSession will automatically set the string
+             line="3672">If %TRUE, #SoupSession will automatically set the string
 for the "Accept-Language" header on every #SoupMessage
 sent, based on the return value of g_get_language_names().
 
@@ -21038,7 +21038,7 @@ Setting this will override any previous value of
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3698">Add a feature object to the session. (Shortcut for calling
+             line="3700">Add a feature object to the session. (Shortcut for calling
 soup_session_add_feature().)</doc>
         <type name="SessionFeature"/>
       </property>
@@ -21049,7 +21049,7 @@ soup_session_add_feature().)</doc>
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3721">Add a feature object of the given type to the session.
+             line="3723">Add a feature object of the given type to the session.
 (Shortcut for calling soup_session_add_feature_by_type().)</doc>
         <type name="GType" c:type="GType"/>
       </property>
@@ -21059,7 +21059,7 @@ soup_session_add_feature().)</doc>
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3511">The #GMainContext that miscellaneous session-related
+             line="3513">The #GMainContext that miscellaneous session-related
 asynchronous callbacks are invoked on. (Eg, setting
 #SoupSession:idle-timeout will add a timeout source on this
 context.)
@@ -21080,7 +21080,7 @@ will also be used for asynchronous HTTP I/O.</doc>
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3768">A %NULL-terminated array of URI schemes that should be
+             line="3770">A %NULL-terminated array of URI schemes that should be
 considered to be aliases for "http". Eg, if this included
 &lt;literal&gt;"dav"&lt;/literal&gt;, than a URI of
 &lt;literal&gt;dav://example.com/path&lt;/literal&gt; would be treated
@@ -21105,7 +21105,7 @@ See also #SoupSession:https-aliases.</doc>
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3804">A comma-delimited list of URI schemes that should be
+             line="3806">A comma-delimited list of URI schemes that should be
 considered to be aliases for "https". See
 #SoupSession:http-aliases for more information.
 
@@ -21121,7 +21121,7 @@ are considered aliases for "https".</doc>
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3311">Connection lifetime (in seconds) when idle. Any connection
+             line="3313">Connection lifetime (in seconds) when idle. Any connection
 left idle longer than this will be closed.
 
 Although you can change this property at any time, it will
@@ -21143,7 +21143,7 @@ connections will never time out).</doc>
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3839">Sets the #SoupAddress to use for the client side of
+             line="3841">Sets the #SoupAddress to use for the client side of
 the connection.
 
 Use this property if you want for instance to bind the
@@ -21164,7 +21164,7 @@ local socket to a specific IP address.</doc>
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3252">A #GProxyResolver to use with this session. Setting this
+             line="3254">A #GProxyResolver to use with this session. Setting this
 will clear the #SoupSession:proxy-uri property, and remove
 any &lt;type&gt;SoupProxyURIResolver&lt;/type&gt; features that have
 been added to the session.
@@ -21183,7 +21183,7 @@ used.</doc>
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3215">A proxy to use for all http and https requests in this
+             line="3217">A proxy to use for all http and https requests in this
 session. Setting this will clear the
 #SoupSession:proxy-resolver property, and remove any
 &lt;type&gt;SoupProxyURIResolver&lt;/type&gt; features that have been
@@ -21210,7 +21210,7 @@ proxies, you can create a #GSimpleProxyResolver and set the
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3744">Remove feature objects from the session. (Shortcut for
+             line="3746">Remove feature objects from the session. (Shortcut for
 calling soup_session_remove_feature_by_type().)</doc>
         <type name="GType" c:type="GType"/>
       </property>
@@ -21220,7 +21220,7 @@ calling soup_session_remove_feature_by_type().)</doc>
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3366">File containing SSL CA certificates.
+             line="3368">File containing SSL CA certificates.
 
 If the specified file does not exist or cannot be read,
 then libsoup will print a warning, and then behave as
@@ -21237,7 +21237,7 @@ else #SoupSession:tls-database with a #GTlsFileDatabase
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3475">Normally, if #SoupSession:tls-database is set (including if
+             line="3477">Normally, if #SoupSession:tls-database is set (including if
 it was set via #SoupSession:ssl-use-system-ca-file or
 #SoupSession:ssl-ca-file), then libsoup will reject any
 certificate that is invalid (ie, expired) or that is not
@@ -21267,7 +21267,7 @@ accepted, and this property has no effect.</doc>
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3401">Setting this to %TRUE is equivalent to setting
+             line="3403">Setting this to %TRUE is equivalent to setting
 #SoupSession:tls-database to the default system CA database.
 (and likewise, setting #SoupSession:tls-database to the
 default database by hand will cause this property to
@@ -21279,16 +21279,15 @@ clear the #SoupSession:tls-database field.
 See #SoupSession:ssl-strict for more information on how
 https certificate validation is handled.
 
-Note that the default value of %TRUE only applies to plain
-#SoupSessions. If you are using #SoupSessionAsync or
-#SoupSessionSync, the default value is %FALSE, for backward
-compatibility.</doc>
+If you are using #SoupSessionAsync or
+#SoupSessionSync, on libsoup older than 2.72.1, the default value
+is %FALSE, for backward compatibility.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <property name="timeout" writable="1" transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3566">The timeout (in seconds) for socket I/O operations
+             line="3568">The timeout (in seconds) for socket I/O operations
 (including connecting to a server, and waiting for a reply
 to an HTTP request).
 
@@ -21314,7 +21313,7 @@ kept open).</doc>
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3438">Sets the #GTlsDatabase to use for validating SSL/TLS
+             line="3439">Sets the #GTlsDatabase to use for validating SSL/TLS
 certificates.
 
 Note that setting the #SoupSession:ssl-ca-file or
@@ -21329,7 +21328,8 @@ If you are using a plain #SoupSession then
 #SoupSession:ssl-use-system-ca-file will be %TRUE by
 default, and so this property will be a copy of the system
 CA database. If you are using #SoupSessionAsync or
-#SoupSessionSync, this property will be %NULL by default.</doc>
+#SoupSessionSync, on libsoup older than 2.72.1, this property
+will be %NULL by default.</doc>
         <type name="Gio.TlsDatabase"/>
       </property>
       <property name="tls-interaction"
@@ -21338,7 +21338,7 @@ CA database. If you are using #SoupSessionAsync or
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3866">A #GTlsInteraction object that will be passed on to any
+             line="3868">A #GTlsInteraction object that will be passed on to any
 #GTlsConnections created by the session. (This can be used to
 provide client-side certificates, for example.)</doc>
         <type name="Gio.TlsInteraction"/>
@@ -21349,7 +21349,7 @@ provide client-side certificates, for example.)</doc>
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3345">Whether or not to use NTLM authentication.</doc>
+             line="3347">Whether or not to use NTLM authentication.</doc>
         <doc-deprecated xml:space="preserve">use soup_session_add_feature_by_type() with
 #SOUP_TYPE_AUTH_NTLM.</doc-deprecated>
         <type name="gboolean" c:type="gboolean"/>
@@ -21360,7 +21360,7 @@ provide client-side certificates, for example.)</doc>
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3547">If %TRUE (which it always is on a plain #SoupSession),
+             line="3549">If %TRUE (which it always is on a plain #SoupSession),
 asynchronous HTTP requests in this session will run in
 whatever the thread-default #GMainContext is at the time
 they are started, rather than always occurring in
@@ -21370,7 +21370,7 @@ they are started, rather than always occurring in
       <property name="user-agent" writable="1" transfer-ownership="none">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3602">If non-%NULL, the value to use for the "User-Agent" header
+             line="3604">If non-%NULL, the value to use for the "User-Agent" header
 on #SoupMessage&lt;!-- --&gt;s sent from this session.
 
 RFC 2616 says: "The User-Agent request-header field
@@ -21401,7 +21401,7 @@ header for you.</doc>
       <glib:signal name="authenticate" when="first">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3130">Emitted when the session requires authentication. If
+             line="3132">Emitted when the session requires authentication. If
 credentials are available call soup_auth_authenticate() on
 @auth. If these credentials fail, the signal will be
 emitted again, with @retrying set to %TRUE, which will
@@ -21423,19 +21423,19 @@ for it to continue.</doc>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="3133">the #SoupMessage being sent</doc>
+                 line="3135">the #SoupMessage being sent</doc>
             <type name="Message"/>
           </parameter>
           <parameter name="auth" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="3134">the #SoupAuth to authenticate</doc>
+                 line="3136">the #SoupAuth to authenticate</doc>
             <type name="Auth"/>
           </parameter>
           <parameter name="retrying" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="3135">%TRUE if this is the second (or later) attempt</doc>
+                 line="3137">%TRUE if this is the second (or later) attempt</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -21443,7 +21443,7 @@ for it to continue.</doc>
       <glib:signal name="connection-created" when="first" version="2.30">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3165">Emitted when a new connection is created. This is an
+             line="3167">Emitted when a new connection is created. This is an
 internal signal intended only to be used for debugging
 purposes, and may go away in the future.</doc>
         <return-value transfer-ownership="none">
@@ -21453,7 +21453,7 @@ purposes, and may go away in the future.</doc>
           <parameter name="connection" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="3168">the connection</doc>
+                 line="3170">the connection</doc>
             <type name="GObject.Object"/>
           </parameter>
         </parameters>
@@ -21461,7 +21461,7 @@ purposes, and may go away in the future.</doc>
       <glib:signal name="request-queued" when="first" version="2.24">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3032">Emitted when a request is queued on @session. (Note that
+             line="3034">Emitted when a request is queued on @session. (Note that
 "queued" doesn't just mean soup_session_queue_message();
 soup_session_send_message() implicitly queues the message
 as well.)
@@ -21503,7 +21503,7 @@ signals) may be invoked multiple times for a given message.</doc>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="3035">the request that was queued</doc>
+                 line="3037">the request that was queued</doc>
             <type name="Message"/>
           </parameter>
         </parameters>
@@ -21514,7 +21514,7 @@ signals) may be invoked multiple times for a given message.</doc>
                    deprecated-version="2.50.">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3085">Emitted just before a request is sent. See
+             line="3087">Emitted just before a request is sent. See
 #SoupSession::request_queued for a detailed description of
 the message lifecycle within a session.</doc>
         <doc-deprecated xml:space="preserve">Use #SoupMessage::starting instead.</doc-deprecated>
@@ -21525,13 +21525,13 @@ the message lifecycle within a session.</doc>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="3088">the request being sent</doc>
+                 line="3090">the request being sent</doc>
             <type name="Message"/>
           </parameter>
           <parameter name="socket" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="3089">the socket the request is being sent on</doc>
+                 line="3091">the socket the request is being sent on</doc>
             <type name="Socket"/>
           </parameter>
         </parameters>
@@ -21539,7 +21539,7 @@ the message lifecycle within a session.</doc>
       <glib:signal name="request-unqueued" when="first" version="2.24">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3108">Emitted when a request is removed from @session's queue,
+             line="3110">Emitted when a request is removed from @session's queue,
 indicating that @session is done with it. See
 #SoupSession::request_queued for a detailed description of the
 message lifecycle within a session.</doc>
@@ -21550,7 +21550,7 @@ message lifecycle within a session.</doc>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="3111">the request that was unqueued</doc>
+                 line="3113">the request that was unqueued</doc>
             <type name="Message"/>
           </parameter>
         </parameters>
@@ -21558,7 +21558,7 @@ message lifecycle within a session.</doc>
       <glib:signal name="tunneling" when="first" version="2.30">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-session.c"
-             line="3189">Emitted when an SSL tunnel is being created on a proxy
+             line="3191">Emitted when an SSL tunnel is being created on a proxy
 connection. This is an internal signal intended only to be
 used for debugging purposes, and may go away in the future.</doc>
         <return-value transfer-ownership="none">
@@ -21568,7 +21568,7 @@ used for debugging purposes, and may go away in the future.</doc>
           <parameter name="connection" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="3192">the connection</doc>
+                 line="3194">the connection</doc>
             <type name="GObject.Object"/>
           </parameter>
         </parameters>
@@ -21682,7 +21682,7 @@ linkend="libsoup-session-porting"&gt;porting guide&lt;/link&gt;.</doc-deprecated
     <callback name="SessionCallback" c:type="SoupSessionCallback">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="2126">Prototype for the callback passed to soup_session_queue_message(),
+           line="2128">Prototype for the callback passed to soup_session_queue_message(),
 qv.</doc>
       <source-position filename="..\libsoup\soup-session.h" line="23"/>
       <return-value transfer-ownership="none">
@@ -21692,13 +21692,13 @@ qv.</doc>
         <parameter name="session" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="2128">the session</doc>
+               line="2130">the session</doc>
           <type name="Session" c:type="SoupSession*"/>
         </parameter>
         <parameter name="msg" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="2129">the message that has finished</doc>
+               line="2131">the message that has finished</doc>
           <type name="Message" c:type="SoupMessage*"/>
         </parameter>
         <parameter name="user_data"
@@ -21708,7 +21708,7 @@ qv.</doc>
                    closure="2">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="2130">the data passed to soup_session_queue_message</doc>
+               line="2132">the data passed to soup_session_queue_message</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -21771,13 +21771,13 @@ qv.</doc>
             <parameter name="session" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="..\libsoup\soup-session.c"
-                   line="2150">a #SoupSession</doc>
+                   line="2152">a #SoupSession</doc>
               <type name="Session" c:type="SoupSession*"/>
             </parameter>
             <parameter name="msg" transfer-ownership="full">
               <doc xml:space="preserve"
                    filename="..\libsoup\soup-session.c"
-                   line="2151">the message to queue</doc>
+                   line="2153">the message to queue</doc>
               <type name="Message" c:type="SoupMessage*"/>
             </parameter>
             <parameter name="callback"
@@ -21788,7 +21788,7 @@ qv.</doc>
                        closure="3">
               <doc xml:space="preserve"
                    filename="..\libsoup\soup-session.c"
-                   line="2152">a #SoupSessionCallback which will
+                   line="2154">a #SoupSessionCallback which will
 be called after the message completes or when an unrecoverable error occurs.</doc>
               <type name="SessionCallback" c:type="SoupSessionCallback"/>
             </parameter>
@@ -21799,7 +21799,7 @@ be called after the message completes or when an unrecoverable error occurs.</do
                        closure="3">
               <doc xml:space="preserve"
                    filename="..\libsoup\soup-session.c"
-                   line="2154">a pointer passed to @callback.</doc>
+                   line="2156">a pointer passed to @callback.</doc>
               <type name="gpointer" c:type="gpointer"/>
             </parameter>
           </parameters>
@@ -21815,13 +21815,13 @@ be called after the message completes or when an unrecoverable error occurs.</do
             <parameter name="session" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="..\libsoup\soup-session.c"
-                   line="2216">a #SoupSession</doc>
+                   line="2218">a #SoupSession</doc>
               <type name="Session" c:type="SoupSession*"/>
             </parameter>
             <parameter name="msg" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="..\libsoup\soup-session.c"
-                   line="2217">the message to requeue</doc>
+                   line="2219">the message to requeue</doc>
               <type name="Message" c:type="SoupMessage*"/>
             </parameter>
           </parameters>
@@ -21833,20 +21833,20 @@ be called after the message completes or when an unrecoverable error occurs.</do
           <return-value transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-session.c"
-                 line="2267">the HTTP status code of the response</doc>
+                 line="2269">the HTTP status code of the response</doc>
             <type name="guint" c:type="guint"/>
           </return-value>
           <parameters>
             <parameter name="session" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="..\libsoup\soup-session.c"
-                   line="2247">a #SoupSession</doc>
+                   line="2249">a #SoupSession</doc>
               <type name="Session" c:type="SoupSession*"/>
             </parameter>
             <parameter name="msg" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="..\libsoup\soup-session.c"
-                   line="2248">the message to send</doc>
+                   line="2250">the message to send</doc>
               <type name="Message" c:type="SoupMessage*"/>
             </parameter>
           </parameters>
@@ -21862,19 +21862,19 @@ be called after the message completes or when an unrecoverable error occurs.</do
             <parameter name="session" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="..\libsoup\soup-session.c"
-                   line="2423">a #SoupSession</doc>
+                   line="2425">a #SoupSession</doc>
               <type name="Session" c:type="SoupSession*"/>
             </parameter>
             <parameter name="msg" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="..\libsoup\soup-session.c"
-                   line="2424">the message to cancel</doc>
+                   line="2426">the message to cancel</doc>
               <type name="Message" c:type="SoupMessage*"/>
             </parameter>
             <parameter name="status_code" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="..\libsoup\soup-session.c"
-                   line="2425">status code to set on @msg (generally
+                   line="2427">status code to set on @msg (generally
 %SOUP_STATUS_CANCELLED)</doc>
               <type name="guint" c:type="guint"/>
             </parameter>
@@ -21943,7 +21943,7 @@ be called after the message completes or when an unrecoverable error occurs.</do
               version="2.62">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-session.c"
-           line="4999">Prototype for the progress callback passed to soup_session_connect_async().</doc>
+           line="5001">Prototype for the progress callback passed to soup_session_connect_async().</doc>
       <source-position filename="..\libsoup\soup-session.h" line="237"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
@@ -21952,19 +21952,19 @@ be called after the message completes or when an unrecoverable error occurs.</do
         <parameter name="session" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="5001">the #SoupSession</doc>
+               line="5003">the #SoupSession</doc>
           <type name="Session" c:type="SoupSession*"/>
         </parameter>
         <parameter name="event" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="5002">a #GSocketClientEvent</doc>
+               line="5004">a #GSocketClientEvent</doc>
           <type name="Gio.SocketClientEvent" c:type="GSocketClientEvent"/>
         </parameter>
         <parameter name="connection" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="5003">the current state of the network connection</doc>
+               line="5005">the current state of the network connection</doc>
           <type name="Gio.IOStream" c:type="GIOStream*"/>
         </parameter>
         <parameter name="user_data"
@@ -21974,7 +21974,7 @@ be called after the message completes or when an unrecoverable error occurs.</do
                    closure="3">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-session.c"
-               line="5004">the data passed to soup_session_connect_async().</doc>
+               line="5006">the data passed to soup_session_connect_async().</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -24306,7 +24306,7 @@ as well, but this would be more annoying than useful.)</doc>
       <constructor name="new" c:identifier="soup_uri_new">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="497">Parses an absolute URI.
+             line="502">Parses an absolute URI.
 
 You can also pass %NULL for @uri_string if you want to get back an
 "empty" #SoupURI that you can fill in by hand. (You will need to
@@ -24316,7 +24316,7 @@ those fields are required.)</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="508">a #SoupURI, or %NULL if the given string
+               line="513">a #SoupURI, or %NULL if the given string
  was found to be invalid.</doc>
           <type name="URI" c:type="SoupURI*"/>
         </return-value>
@@ -24327,7 +24327,7 @@ those fields are required.)</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="499">a URI</doc>
+                 line="504">a URI</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -24361,19 +24361,19 @@ those fields are required.)</doc>
       <method name="copy" c:identifier="soup_uri_copy">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="621">Copies @uri</doc>
+             line="626">Copies @uri</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="60"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="627">a copy of @uri, which must be freed with soup_uri_free()</doc>
+               line="632">a copy of @uri, which must be freed with soup_uri_free()</doc>
           <type name="URI" c:type="SoupURI*"/>
         </return-value>
         <parameters>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="623">a #SoupURI</doc>
+                 line="628">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
         </parameters>
@@ -24383,19 +24383,19 @@ those fields are required.)</doc>
               version="2.28">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="1260">Makes a copy of @uri, considering only the protocol, host, and port</doc>
+             line="1265">Makes a copy of @uri, considering only the protocol, host, and port</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="130"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="1266">the new #SoupURI</doc>
+               line="1271">the new #SoupURI</doc>
           <type name="URI" c:type="SoupURI*"/>
         </return-value>
         <parameters>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1262">a #SoupURI</doc>
+                 line="1267">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
         </parameters>
@@ -24403,25 +24403,25 @@ those fields are required.)</doc>
       <method name="equal" c:identifier="soup_uri_equal">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="660">Tests whether or not @uri1 and @uri2 are equal in all parts</doc>
+             line="665">Tests whether or not @uri1 and @uri2 are equal in all parts</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="63"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="667">%TRUE or %FALSE</doc>
+               line="672">%TRUE or %FALSE</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="uri1" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="662">a #SoupURI</doc>
+                 line="667">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
           <parameter name="uri2" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="663">another #SoupURI</doc>
+                 line="668">another #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </parameter>
         </parameters>
@@ -24429,7 +24429,7 @@ those fields are required.)</doc>
       <method name="free" c:identifier="soup_uri_free">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="690">Frees @uri.</doc>
+             line="695">Frees @uri.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="67"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -24438,7 +24438,7 @@ those fields are required.)</doc>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="692">a #SoupURI</doc>
+                 line="697">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
         </parameters>
@@ -24448,19 +24448,19 @@ those fields are required.)</doc>
               version="2.32">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="1226">Gets @uri's fragment.</doc>
+             line="1231">Gets @uri's fragment.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="124"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="1232">@uri's fragment.</doc>
+               line="1237">@uri's fragment.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1228">a #SoupURI</doc>
+                 line="1233">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
         </parameters>
@@ -24468,19 +24468,19 @@ those fields are required.)</doc>
       <method name="get_host" c:identifier="soup_uri_get_host" version="2.32">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="1034">Gets @uri's host.</doc>
+             line="1039">Gets @uri's host.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="97"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="1040">@uri's host.</doc>
+               line="1045">@uri's host.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1036">a #SoupURI</doc>
+                 line="1041">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
         </parameters>
@@ -24490,19 +24490,19 @@ those fields are required.)</doc>
               version="2.32">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="1000">Gets @uri's password.</doc>
+             line="1005">Gets @uri's password.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="92"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="1006">@uri's password.</doc>
+               line="1011">@uri's password.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1002">a #SoupURI</doc>
+                 line="1007">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
         </parameters>
@@ -24510,19 +24510,19 @@ those fields are required.)</doc>
       <method name="get_path" c:identifier="soup_uri_get_path" version="2.32">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="1108">Gets @uri's path.</doc>
+             line="1113">Gets @uri's path.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="107"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="1114">@uri's path.</doc>
+               line="1119">@uri's path.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1110">a #SoupURI</doc>
+                 line="1115">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
         </parameters>
@@ -24530,19 +24530,19 @@ those fields are required.)</doc>
       <method name="get_port" c:identifier="soup_uri_get_port" version="2.32">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="1074">Gets @uri's port.</doc>
+             line="1079">Gets @uri's port.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="102"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="1080">@uri's port.</doc>
+               line="1085">@uri's port.</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1076">a #SoupURI</doc>
+                 line="1081">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
         </parameters>
@@ -24552,19 +24552,19 @@ those fields are required.)</doc>
               version="2.32">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="1148">Gets @uri's query.</doc>
+             line="1153">Gets @uri's query.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="112"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="1154">@uri's query.</doc>
+               line="1159">@uri's query.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1150">a #SoupURI</doc>
+                 line="1155">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
         </parameters>
@@ -24574,19 +24574,19 @@ those fields are required.)</doc>
               version="2.32">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="930">Gets @uri's scheme.</doc>
+             line="935">Gets @uri's scheme.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="82"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="936">@uri's scheme.</doc>
+               line="941">@uri's scheme.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="932">a #SoupURI</doc>
+                 line="937">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
         </parameters>
@@ -24594,19 +24594,19 @@ those fields are required.)</doc>
       <method name="get_user" c:identifier="soup_uri_get_user" version="2.32">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="966">Gets @uri's user.</doc>
+             line="971">Gets @uri's user.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="87"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="972">@uri's user.</doc>
+               line="977">@uri's user.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="968">a #SoupURI</doc>
+                 line="973">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
         </parameters>
@@ -24616,12 +24616,12 @@ those fields are required.)</doc>
               version="2.28">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="1309">Compares @v1 and @v2, considering only the scheme, host, and port.</doc>
+             line="1314">Compares @v1 and @v2, considering only the scheme, host, and port.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="134"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="1316">whether or not the URIs are equal in scheme, host,
+               line="1321">whether or not the URIs are equal in scheme, host,
 and port.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -24629,13 +24629,13 @@ and port.</doc>
           <instance-parameter name="v1" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1311">a #SoupURI with a non-%NULL @host member</doc>
+                 line="1316">a #SoupURI with a non-%NULL @host member</doc>
             <type name="URI" c:type="gconstpointer"/>
           </instance-parameter>
           <parameter name="v2" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1312">a #SoupURI with a non-%NULL @host member</doc>
+                 line="1317">a #SoupURI with a non-%NULL @host member</doc>
             <type name="URI" c:type="gconstpointer"/>
           </parameter>
         </parameters>
@@ -24645,19 +24645,19 @@ and port.</doc>
               version="2.28">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="1287">Hashes @key, considering only the scheme, host, and port.</doc>
+             line="1292">Hashes @key, considering only the scheme, host, and port.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="132"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="1293">a hash</doc>
+               line="1298">a hash</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="key" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1289">a #SoupURI with a non-%NULL @host member</doc>
+                 line="1294">a #SoupURI with a non-%NULL @host member</doc>
             <type name="URI" c:type="gconstpointer"/>
           </instance-parameter>
         </parameters>
@@ -24665,7 +24665,7 @@ and port.</doc>
       <method name="set_fragment" c:identifier="soup_uri_set_fragment">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="1244">Sets @uri's fragment to @fragment.</doc>
+             line="1249">Sets @uri's fragment to @fragment.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="126"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -24674,7 +24674,7 @@ and port.</doc>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1246">a #SoupURI</doc>
+                 line="1251">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
           <parameter name="fragment"
@@ -24683,7 +24683,7 @@ and port.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1247">the fragment</doc>
+                 line="1252">the fragment</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -24691,7 +24691,7 @@ and port.</doc>
       <method name="set_host" c:identifier="soup_uri_set_host">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="1052">Sets @uri's host to @host.
+             line="1057">Sets @uri's host to @host.
 
 If @host is an IPv6 IP address, it should not include the brackets
 required by the URI syntax; they will be added automatically when
@@ -24706,7 +24706,7 @@ http and https URIs should not have a %NULL @host.</doc>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1054">a #SoupURI</doc>
+                 line="1059">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
           <parameter name="host"
@@ -24715,7 +24715,7 @@ http and https URIs should not have a %NULL @host.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1055">the hostname or IP address, or %NULL</doc>
+                 line="1060">the hostname or IP address, or %NULL</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -24723,7 +24723,7 @@ http and https URIs should not have a %NULL @host.</doc>
       <method name="set_password" c:identifier="soup_uri_set_password">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="1018">Sets @uri's password to @password.</doc>
+             line="1023">Sets @uri's password to @password.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="94"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -24732,7 +24732,7 @@ http and https URIs should not have a %NULL @host.</doc>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1020">a #SoupURI</doc>
+                 line="1025">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
           <parameter name="password"
@@ -24741,7 +24741,7 @@ http and https URIs should not have a %NULL @host.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1021">the password, or %NULL</doc>
+                 line="1026">the password, or %NULL</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -24749,7 +24749,7 @@ http and https URIs should not have a %NULL @host.</doc>
       <method name="set_path" c:identifier="soup_uri_set_path">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="1126">Sets @uri's path to @path.</doc>
+             line="1131">Sets @uri's path to @path.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="109"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -24758,13 +24758,13 @@ http and https URIs should not have a %NULL @host.</doc>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1128">a #SoupURI</doc>
+                 line="1133">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
           <parameter name="path" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1129">the non-%NULL path</doc>
+                 line="1134">the non-%NULL path</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -24772,7 +24772,7 @@ http and https URIs should not have a %NULL @host.</doc>
       <method name="set_port" c:identifier="soup_uri_set_port">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="1092">Sets @uri's port to @port. If @port is 0, @uri will not have an
+             line="1097">Sets @uri's port to @port. If @port is 0, @uri will not have an
 explicitly-specified port.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="104"/>
         <return-value transfer-ownership="none">
@@ -24782,13 +24782,13 @@ explicitly-specified port.</doc>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1094">a #SoupURI</doc>
+                 line="1099">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
           <parameter name="port" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1095">the port, or 0</doc>
+                 line="1100">the port, or 0</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -24796,7 +24796,7 @@ explicitly-specified port.</doc>
       <method name="set_query" c:identifier="soup_uri_set_query">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="1166">Sets @uri's query to @query.</doc>
+             line="1171">Sets @uri's query to @query.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="114"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -24805,7 +24805,7 @@ explicitly-specified port.</doc>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1168">a #SoupURI</doc>
+                 line="1173">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
           <parameter name="query"
@@ -24814,7 +24814,7 @@ explicitly-specified port.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1169">the query</doc>
+                 line="1174">the query</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -24824,7 +24824,7 @@ explicitly-specified port.</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="1200">Sets @uri's query to the result of encoding the given form fields
+             line="1205">Sets @uri's query to the result of encoding the given form fields
 and values according to the * HTML form rules. See
 soup_form_encode() for more information.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="120"/>
@@ -24835,19 +24835,19 @@ soup_form_encode() for more information.</doc>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1202">a #SoupURI</doc>
+                 line="1207">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
           <parameter name="first_field" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1203">name of the first form field to encode into query</doc>
+                 line="1208">name of the first form field to encode into query</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1204">value of @first_field, followed by additional field names
+                 line="1209">value of @first_field, followed by additional field names
 and values, terminated by %NULL.</doc>
             <varargs/>
           </parameter>
@@ -24857,7 +24857,7 @@ and values, terminated by %NULL.</doc>
               c:identifier="soup_uri_set_query_from_form">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="1182">Sets @uri's query to the result of encoding @form according to the
+             line="1187">Sets @uri's query to the result of encoding @form according to the
 HTML form rules. See soup_form_encode_hash() for more information.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="117"/>
         <return-value transfer-ownership="none">
@@ -24867,13 +24867,13 @@ HTML form rules. See soup_form_encode_hash() for more information.</doc>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1184">a #SoupURI</doc>
+                 line="1189">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
           <parameter name="form" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="1185">a #GHashTable containing HTML form
+                 line="1190">a #GHashTable containing HTML form
 information</doc>
             <type name="GLib.HashTable" c:type="GHashTable*">
               <type name="utf8"/>
@@ -24885,7 +24885,7 @@ information</doc>
       <method name="set_scheme" c:identifier="soup_uri_set_scheme">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="948">Sets @uri's scheme to @scheme. This will also set @uri's port to
+             line="953">Sets @uri's scheme to @scheme. This will also set @uri's port to
 the default port for @scheme, if known.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="84"/>
         <return-value transfer-ownership="none">
@@ -24895,13 +24895,13 @@ the default port for @scheme, if known.</doc>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="950">a #SoupURI</doc>
+                 line="955">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
           <parameter name="scheme" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="951">the URI scheme</doc>
+                 line="956">the URI scheme</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -24909,7 +24909,7 @@ the default port for @scheme, if known.</doc>
       <method name="set_user" c:identifier="soup_uri_set_user">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="984">Sets @uri's user to @user.</doc>
+             line="989">Sets @uri's user to @user.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="89"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -24918,7 +24918,7 @@ the default port for @scheme, if known.</doc>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="986">a #SoupURI</doc>
+                 line="991">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
           <parameter name="user"
@@ -24927,7 +24927,7 @@ the default port for @scheme, if known.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="987">the username, or %NULL</doc>
+                 line="992">the username, or %NULL</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -24935,7 +24935,7 @@ the default port for @scheme, if known.</doc>
       <method name="to_string" c:identifier="soup_uri_to_string">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="599">Returns a string representing @uri.
+             line="604">Returns a string representing @uri.
 
 If @just_path_and_query is %TRUE, this concatenates the path and query
 together. That is, it constructs the string that would be needed in
@@ -24947,20 +24947,20 @@ does.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="613">a string representing @uri, which the caller must free.</doc>
+               line="618">a string representing @uri, which the caller must free.</doc>
           <type name="utf8" c:type="char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="601">a #SoupURI</doc>
+                 line="606">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
           <parameter name="just_path_and_query" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="602">if %TRUE, output just the path and query portions</doc>
+                 line="607">if %TRUE, output just the path and query portions</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -24969,21 +24969,21 @@ does.</doc>
               c:identifier="soup_uri_uses_default_port">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="911">Tests if @uri uses the default port for its scheme. (Eg, 80 for
+             line="916">Tests if @uri uses the default port for its scheme. (Eg, 80 for
 http.) (This only works for http, https and ftp; libsoup does not know
 the default ports of other protocols.)</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="79"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="919">%TRUE or %FALSE</doc>
+               line="924">%TRUE or %FALSE</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="913">a #SoupURI</doc>
+                 line="918">a #SoupURI</doc>
             <type name="URI" c:type="SoupURI*"/>
           </instance-parameter>
         </parameters>
@@ -24991,7 +24991,7 @@ the default ports of other protocols.)</doc>
       <function name="decode" c:identifier="soup_uri_decode">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="790">Fully %&lt;!-- --&gt;-decodes @part.
+             line="795">Fully %&lt;!-- --&gt;-decodes @part.
 
 In the past, this would return %NULL if @part contained invalid
 percent-encoding, but now it just ignores the problem (as
@@ -25000,14 +25000,14 @@ soup_uri_new() already did).</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="800">the decoded URI part.</doc>
+               line="805">the decoded URI part.</doc>
           <type name="utf8" c:type="char*"/>
         </return-value>
         <parameters>
           <parameter name="part" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="792">a URI part</doc>
+                 line="797">a URI part</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -25015,21 +25015,21 @@ soup_uri_new() already did).</doc>
       <function name="encode" c:identifier="soup_uri_encode">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="726">This %&lt;!-- --&gt;-encodes the given URI part and returns the escaped
+             line="731">This %&lt;!-- --&gt;-encodes the given URI part and returns the escaped
 version in allocated memory, which the caller must free when it is
 done.</doc>
         <source-position filename="..\libsoup\soup-uri.h" line="70"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="736">the encoded URI part</doc>
+               line="741">the encoded URI part</doc>
           <type name="utf8" c:type="char*"/>
         </return-value>
         <parameters>
           <parameter name="part" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="728">a URI part</doc>
+                 line="733">a URI part</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="escape_extra"
@@ -25038,7 +25038,7 @@ done.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="729">additional reserved characters to
+                 line="734">additional reserved characters to
 escape (or %NULL)</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
@@ -25047,7 +25047,7 @@ escape (or %NULL)</doc>
       <function name="normalize" c:identifier="soup_uri_normalize">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="877">%&lt;!-- --&gt;-decodes any "unreserved" characters (or characters in
+             line="882">%&lt;!-- --&gt;-decodes any "unreserved" characters (or characters in
 @unescape_extra) in @part, and %&lt;!-- --&gt;-encodes any non-ASCII
 characters, spaces, and non-printing characters in @part.
 
@@ -25068,14 +25068,14 @@ soup_uri_new() already did).</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="900">the normalized URI part</doc>
+               line="905">the normalized URI part</doc>
           <type name="utf8" c:type="char*"/>
         </return-value>
         <parameters>
           <parameter name="part" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="879">a URI part</doc>
+                 line="884">a URI part</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="unescape_extra"
@@ -25084,7 +25084,7 @@ soup_uri_new() already did).</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="..\libsoup\soup-uri.c"
-                 line="880">reserved characters to unescape (or %NULL)</doc>
+                 line="885">reserved characters to unescape (or %NULL)</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -29811,7 +29811,7 @@ an error occurs, %NULL will be returned and @error set.</doc>
               moved-to="URI.decode">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-uri.c"
-           line="790">Fully %&lt;!-- --&gt;-decodes @part.
+           line="795">Fully %&lt;!-- --&gt;-decodes @part.
 
 In the past, this would return %NULL if @part contained invalid
 percent-encoding, but now it just ignores the problem (as
@@ -29820,14 +29820,14 @@ soup_uri_new() already did).</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="800">the decoded URI part.</doc>
+             line="805">the decoded URI part.</doc>
         <type name="utf8" c:type="char*"/>
       </return-value>
       <parameters>
         <parameter name="part" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="792">a URI part</doc>
+               line="797">a URI part</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
       </parameters>
@@ -29837,21 +29837,21 @@ soup_uri_new() already did).</doc>
               moved-to="URI.encode">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-uri.c"
-           line="726">This %&lt;!-- --&gt;-encodes the given URI part and returns the escaped
+           line="731">This %&lt;!-- --&gt;-encodes the given URI part and returns the escaped
 version in allocated memory, which the caller must free when it is
 done.</doc>
       <source-position filename="..\libsoup\soup-uri.h" line="70"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="736">the encoded URI part</doc>
+             line="741">the encoded URI part</doc>
         <type name="utf8" c:type="char*"/>
       </return-value>
       <parameters>
         <parameter name="part" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="728">a URI part</doc>
+               line="733">a URI part</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="escape_extra"
@@ -29860,7 +29860,7 @@ done.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="729">additional reserved characters to
+               line="734">additional reserved characters to
 escape (or %NULL)</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
@@ -29871,7 +29871,7 @@ escape (or %NULL)</doc>
               moved-to="URI.normalize">
       <doc xml:space="preserve"
            filename="..\libsoup\soup-uri.c"
-           line="877">%&lt;!-- --&gt;-decodes any "unreserved" characters (or characters in
+           line="882">%&lt;!-- --&gt;-decodes any "unreserved" characters (or characters in
 @unescape_extra) in @part, and %&lt;!-- --&gt;-encodes any non-ASCII
 characters, spaces, and non-printing characters in @part.
 
@@ -29892,14 +29892,14 @@ soup_uri_new() already did).</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="..\libsoup\soup-uri.c"
-             line="900">the normalized URI part</doc>
+             line="905">the normalized URI part</doc>
         <type name="utf8" c:type="char*"/>
       </return-value>
       <parameters>
         <parameter name="part" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="879">a URI part</doc>
+               line="884">a URI part</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="unescape_extra"
@@ -29908,7 +29908,7 @@ soup_uri_new() already did).</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="..\libsoup\soup-uri.c"
-               line="880">reserved characters to unescape (or %NULL)</doc>
+               line="885">reserved characters to unescape (or %NULL)</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
       </parameters>
