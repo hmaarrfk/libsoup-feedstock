@@ -16,10 +16,19 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - meson
+    - meson 0.56.2
     - ninja
     - pkg-config
     - gobject-introspection
+    # for native build prior to cross build
+    - gettext     # [build_platform != target_platform]
+    - glib        # [build_platform != target_platform]
+    - sqlite      # [build_platform != target_platform]
+    - libxml2     # [build_platform != target_platform]
+    - brotli      # [build_platform != target_platform]
+    - libpsl      # [build_platform != target_platform]
+    - glib-networking  # [build_platform != target_platform]
+    - zlib        # [build_platform != target_platform]
   host:
     - glib
     - sqlite
