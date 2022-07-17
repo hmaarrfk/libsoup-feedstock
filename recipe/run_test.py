@@ -3,7 +3,7 @@ import os
 import sys
 from pathlib import PurePath
 
-gi.require_version("Soup", "2.4")
+gi.require_version("Soup", "3.0")
 from gi.repository import GObject, Soup, Gio, GLib
 
 # version check
@@ -25,6 +25,6 @@ if os.name == 'nt':
         session.props.tls_database = db
         session.props.ssl_use_system_ca_file = False
 
-session.send_message(msg) # blocks
+session.send_and_read(msg, None) # blocks
 if msg.props.status_code < 200 or msg.props.status_code >= 300:
     print(f"Found status code: {msg.props.status_code}")
