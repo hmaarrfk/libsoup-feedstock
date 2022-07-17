@@ -1,5 +1,5 @@
 {% set name = "libsoup" %}
-{% set version = "2.74.2" %}
+{% set version = "3.0.7" %}
 {% set version_majmin = '.'.join(version.split('.', 2)[:2]) %}
 
 package:
@@ -8,10 +8,12 @@ package:
 
 source:
   url: https://download.gnome.org/sources/{{ name }}/{{ version_majmin }}/{{ name }}-{{ version }}.tar.xz
-  sha256: f0a427656e5fe19e1df71c107e88dfa1b2e673c25c547b7823b6018b40d01159
+  sha256: ebdf90cf3599c11acbb6818a9d9e3fc9d2c68e56eb829b93962972683e1bf7c8
 
 build:
   number: 0
+  # skipping Windows builds until there is a Windows build of nghttp2
+  skip: True  # [win]
 
 requirements:
   build:
@@ -25,6 +27,7 @@ requirements:
     - glib        # [build_platform != target_platform]
     - sqlite      # [build_platform != target_platform]
     - libxml2     # [build_platform != target_platform]
+    - libnghttp2  # [build_platform != target_platform]
     - brotli      # [build_platform != target_platform]
     - libpsl      # [build_platform != target_platform]
     - glib-networking  # [build_platform != target_platform]
@@ -34,6 +37,7 @@ requirements:
     - sqlite
     - libxml2
     - brotli
+    - libnghttp2
     - libpsl
     - glib-networking
     - zlib
@@ -41,6 +45,7 @@ requirements:
     - sqlite
     - glib-networking
     - glib
+    - libnghttp2
     - libxml2
     - brotli
     - libpsl
@@ -53,16 +58,16 @@ test:
     - pkg-config
     - pygobject
   commands:
-    - test -f ${PREFIX}/include/libsoup-2.4/libsoup/soup.h                   # [unix]
-    - test -f ${PREFIX}/lib/libsoup-2.4.dylib                                # [osx]
-    - test -f ${PREFIX}/lib/libsoup-2.4.so                                   # [linux]
-    - test -f ${PREFIX}/lib/girepository-1.0/Soup-2.4.typelib                # [unix]
-    - test -f ${PREFIX}/lib/pkgconfig/libsoup-2.4.pc                         # [unix]
-    - if not exist %LIBRARY_LIB%\\pkgconfig\\libsoup-2.4.pc exit 1           # [win]
-    - if not exist %LIBRARY_LIB%\\girepository-1.0\\Soup-2.4.typelib exit 1  # [win]
-    - if not exist %LIBRARY_INC%\\libsoup-2.4\\libsoup\\soup.h exit 1        # [win]
-    - if not exist %LIBRARY_BIN%\\soup-2.4-1.dll exit 1                      # [win]
-    - if not exist %LIBRARY_LIB%\\soup-2.4.lib exit 1                        # [win]
+    - test -f ${PREFIX}/include/libsoup-3.0/libsoup/soup.h                   # [unix]
+    - test -f ${PREFIX}/lib/libsoup-3.0.dylib                                # [osx]
+    - test -f ${PREFIX}/lib/libsoup-3.0.so                                   # [linux]
+    - test -f ${PREFIX}/lib/girepository-1.0/Soup-3.0.typelib                # [unix]
+    - test -f ${PREFIX}/lib/pkgconfig/libsoup-3.0.pc                         # [unix]
+    - if not exist %LIBRARY_LIB%\\pkgconfig\\libsoup-3.0.pc exit 1           # [win]
+    - if not exist %LIBRARY_LIB%\\girepository-1.0\\Soup-3.0.typelib exit 1  # [win]
+    - if not exist %LIBRARY_INC%\\libsoup-3.0\\libsoup\\soup.h exit 1        # [win]
+    - if not exist %LIBRARY_BIN%\\soup-3.0-1.dll exit 1                      # [win]
+    - if not exist %LIBRARY_LIB%\\soup-3.0.lib exit 1                        # [win]
 
 about:
   home: https://gitlab.gnome.org/GNOME/libsoup
