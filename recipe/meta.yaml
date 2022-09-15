@@ -1,5 +1,5 @@
 {% set name = "libsoup" %}
-{% set version = "3.0.7" %}
+{% set version = "3.2.0" %}
 {% set version_majmin = '.'.join(version.split('.', 2)[:2]) %}
 
 package:
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://download.gnome.org/sources/{{ name }}/{{ version_majmin }}/{{ name }}-{{ version }}.tar.xz
-  sha256: ebdf90cf3599c11acbb6818a9d9e3fc9d2c68e56eb829b93962972683e1bf7c8
+  sha256: 2832370698ca8f9fbf174c345b73d89b60561103a626c2df70726b0707f79bd3
 
 build:
-  number: 1
+  number: 0
   # skipping Windows builds until there is a Windows build of nghttp2
-  skip: True  # [win]
+  skip: true  # [win]
 
 requirements:
   build:
