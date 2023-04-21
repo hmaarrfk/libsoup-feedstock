@@ -1,11 +1,11 @@
-About libsoup
-=============
+About libsoup-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libsoup-feedstock/blob/main/LICENSE.txt)
 
 Home: https://gitlab.gnome.org/GNOME/libsoup
 
 Package license: LGPL-2.1-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libsoup-feedstock/blob/main/LICENSE.txt)
 
 Summary: HTTP client/server library for GNOME
 
