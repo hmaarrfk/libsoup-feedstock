@@ -11,7 +11,7 @@ source:
   sha256: 78c8fa37cb152d40ec8c4a148d6155e2f6947f3f1602a7cda3a31ad40f5ee2f3
 
 build:
-  number: 0
+  number: 1
   # skipping Windows builds until there is a Windows build of nghttp2
   skip: true  # [win]
 
