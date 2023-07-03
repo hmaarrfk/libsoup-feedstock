@@ -3,7 +3,7 @@ BUILD:
 c_compiler:
 - gcc
 c_compiler_version:
-- '10'
+- '12'
 cdt_arch:
 - aarch64
 cdt_name:
@@ -17,14 +17,7 @@ docker_image:
 glib:
 - '2'
 libxml2:
-- '2.9'
-pin_run_as_build:
-  libxml2:
-    max_pin: x.x
-  sqlite:
-    max_pin: x
-  zlib:
-    max_pin: x.x
+- '2.10'
 sqlite:
 - '3'
 target_platform:

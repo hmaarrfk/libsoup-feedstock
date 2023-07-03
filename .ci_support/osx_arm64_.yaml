@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '13'
+- '15'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -11,16 +11,9 @@ channel_targets:
 glib:
 - '2'
 libxml2:
-- '2.9'
+- '2.10'
 macos_machine:
 - arm64-apple-darwin20.0.0
-pin_run_as_build:
-  libxml2:
-    max_pin: x.x
-  sqlite:
-    max_pin: x
-  zlib:
-    max_pin: x.x
 sqlite:
 - '3'
 target_platform:
