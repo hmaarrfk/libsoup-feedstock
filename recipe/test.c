@@ -6,6 +6,9 @@ int main(int argc, char *argv[]) {
   SoupSession *session = soup_session_new();
 #ifdef G_OS_WIN32
   gchar *ca_file = g_build_filename(g_getenv("CONDA_PREFIX"), "Library", "ssl", "cacert.pem", NULL);
+#else
+  gchar *ca_file = g_build_filename(g_getenv("CONDA_PREFIX"), "ssl", "cacert.pem", NULL);
+#endif
   GError *error = NULL;
   GTlsDatabase *db = g_tls_file_database_new(ca_file, &error);
   if (error) {
@@ -17,7 +20,6 @@ int main(int argc, char *argv[]) {
     g_object_unref(db);
   }
   g_free(ca_file);
-#endif
   soup_session_send_message(session, msg); // blocks
   g_assert_true(SOUP_STATUS_IS_SUCCESSFUL(msg->status_code));
   g_object_unref(msg);
