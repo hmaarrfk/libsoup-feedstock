@@ -14,6 +14,10 @@ build:
   number: 1
   # skipping Windows builds until there is a Windows build of nghttp2
   skip: true  # [win]
+  run_exports:
+    # Seems to have excellent forward compatibility in the 2.x series
+    # https://abi-laboratory.pro/index.php?view=timeline&l=libsoup
+    - {{ pin_subpackage('libsoup', max_pin='x') }}
 
 requirements:
   build:
@@ -42,15 +46,11 @@ requirements:
     - glib-networking
     - zlib
   run:
-    - sqlite
+    # Needs run export
+    # https://github.com/conda-forge/glib-networking-feedstock/pull/28
     - glib-networking
-    - glib
-    - libnghttp2
-    - libxml2
-    - brotli
+    # https://github.com/conda-forge/libpsl-feedstock/issues/11
     - libpsl
-    - zlib
-    - gettext
 
 test:
   requires:
