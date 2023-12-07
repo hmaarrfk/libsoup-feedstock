@@ -17,7 +17,7 @@ docker_image:
 glib:
 - '2'
 libxml2:
-- '2.11'
+- '2.12'
 sqlite:
 - '3'
 target_platform:
