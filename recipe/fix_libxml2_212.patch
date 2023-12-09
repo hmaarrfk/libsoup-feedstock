@@ -1,0 +1,33 @@
+diff --git a/libsoup/soup-xmlrpc-old.c b/libsoup/soup-xmlrpc-old.c
+index c57086b6..c57775f6 100644
+--- a/libsoup/soup-xmlrpc-old.c
++++ b/libsoup/soup-xmlrpc-old.c
+@@ -12,6 +12,7 @@
+ #include <string.h>
+ 
+ #include <libxml/tree.h>
++#include <libxml/parser.h>
+ 
+ #include "soup-xmlrpc-old.h"
+ #include "soup.h"
+@@ -417,7 +418,7 @@ parse_value (xmlNode *xmlvalue, GValue *value)
+ 		xmlNode *member, *child, *mname, *mxval;
+ 		GHashTable *hash;
+ 		GValue mgval;
+-		
++
+ 		hash = soup_value_hash_new ();
+ 		for (member = find_real_node (typenode->children);
+ 		     member;
+diff --git a/libsoup/soup-xmlrpc.c b/libsoup/soup-xmlrpc.c
+index 42dcda9c..b0132d26 100644
+--- a/libsoup/soup-xmlrpc.c
++++ b/libsoup/soup-xmlrpc.c
+@@ -18,6 +18,7 @@
+ #include <string.h>
+ #include <errno.h>
+ #include <libxml/tree.h>
++#include <libxml/parser.h>
+ #include "soup-xmlrpc.h"
+ #include "soup.h"
+ 
